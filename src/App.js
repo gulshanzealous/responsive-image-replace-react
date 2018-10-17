@@ -1,25 +1,59 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import macScreen from './res/mac-screen.png'
+import macDesk from './res/mac-desk.jpeg'
+
 
 class App extends Component {
+
+  state = {
+    showScreen: false
+  }
+
+  onShowScreen = () => {
+    this.setState({
+      showScreen: true
+    })
+    this.initiateTimer(this)
+  }
+
+  initiateTimer = (self) => {
+    setTimeout((self)=>{
+      self.setState({
+        showScreen:false
+      })
+    },1000,self)
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <div className='Container'>
+
+        {/* header */}
+        <div className='Header'  >
+          Testright
+        </div>
+
+        <div className='Desk'>
+          <img src={macDesk} className='Desk-image' />
+        </div>
+
+        <div className='Screen'>
+          {
+            this.state.showScreen?
+            <img src={macScreen} className='Screen-image' />
+            :
+              <div className='Main-Button' onClick={this.onShowScreen} >
+                Show
+              </div>
+          }
+        </div>
+
+        
+
+
+        </div>
       </div>
     );
   }

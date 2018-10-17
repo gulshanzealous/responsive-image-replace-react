@@ -1,32 +1,68 @@
 .App {
-  text-align: center;
+  height: 100vh;
+  width: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.Container{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(100,1fr);
+  grid-template-rows: repeat(50,1fr);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Header {
+  grid-column: 1/101;
+  grid-row: 1/6;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  font-size: 1.5em;
   color: white;
+  z-index: 10;
+  background-color: #000;
 }
 
-.App-link {
-  color: #61dafb;
+.Desk {
+  grid-column: 1/101;
+  grid-row: 1/51;
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Desk-image{
+  height: 100%;
+  width: 100%;
+}
+
+.Screen {
+  grid-column: 34/67;
+  grid-row: 15/28;
+  display: flex;
+}
+
+.Screen-image{
+  width: 100%;
+}
+
+.Button-container {
+  grid-column: 70/80;
+  grid-row:20/22;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.Main-Button {
+  height: 40px;
+  width: 100px;
+  background-color: green;
+  border-radius: 5px;
+  color: #fff;
+  align-self: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left:35%;
 }
